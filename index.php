@@ -61,9 +61,11 @@ include_once 'config.php';
 
 <script type="text/javascript">
     $(document).ready(function(){
+
         $('#create-employee').click(function(){
                 $('#page-content').load('create_form.php');
         });
+
         $(document).on('submit', '#create-employee-form', function() {
             $.post("create.php", $(this).serialize())
                 .done(function(data) {
@@ -71,6 +73,7 @@ include_once 'config.php';
                 });
             $('#all-employees').refresh();
         });
+
         //edit
         $('.edit-employee').click(function(){
             var employee_id = $(this).attr("id");
